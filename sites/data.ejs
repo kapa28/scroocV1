@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: User data</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="scrooc user data, scrooc GDPR">
+		<meta name="description" content="Monitor your data on Scrooc.com.">
+		
+		<meta property="og:url" content="https://scrooc.com/data">
+		<meta property="og:title" content="Scrooc: User data"/>
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="../../../img/og.png" />
+		<meta property="og:description" content="Monitor your data on Scrooc.com." />
+		<meta property="og:site_name" content="Scrooc" />
+
+		<link rel="canonical" href="https://scrooc.com/data">
+		<meta name="robots" content="noindex">
+	</head>
+	<body onload="loadUserData(<%= JSON.stringify(locals.pd) %>)">
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<div class="container">
+				<div class="about pd">
+					<!-- RAJS NARED Y LOAD FUNKCIJO -->
+					<h3 class="title">We`d like to give everyone a chance to see and retrive their personal data.</h3>
+					<p class="pdp">This is all the personal and linkable info we thought could be extracted or interpreted as personal data:</p>
+					<p>Profiling:</p>
+					<div class="pdp" id="pd1">
+
+					</div>
+
+					<p>Numbers of posts made, replies submitted, likes, reports, recived reports and ban strikes reviced:</p>
+					<div class="pdp" id="pd2">
+
+					</div>
+
+					<p>Tags used:</p>
+					<div class="pdp" id="pd3">
+
+					</div>	
+
+					<p>Proposaals submitted:</p>
+					<div class="pdp" id="pd4">
+
+					</div>
+
+					<p>Topics managed:</p>
+					<div class="pdp" id="pd5">
+
+					</div>
+
+					<p>Topics posted to:</p>
+					<div class="pdp" id="pd6">
+
+					</div>
+
+					<p>Posts and replies liked:</p>
+					<div class="pdp" id="pd7">
+
+					</div>
+
+					<div>To see every post you've ever made head over to your <a href="../../profile"><button>profile page</button></a>.</div>
+					<div>To see every joined topic head onto the <a href="../../"><button>first page</button></a> and navigate onto the joind topic search field.</div>
+					<div>To see every notification head to the <a href="../../"><button>first page</button></a> and click the notification(letter icon) button.</div>
+
+				</div>
+			</div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

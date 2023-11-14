@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc</title>
+
+		<%- include ("modules/link.ejs") %>
+
+		<meta name="keywords" content="scrooc forum, scrooc, anonymous forum, lightweight forum, modern forum">
+		<meta name="description" content="Scrooc is a lightweight, privacy focused social media with a plethora of interesting topics to chose from.">
+
+		<meta property="og:url" content="https://scrooc.com/">
+		<meta property="og:title" content="Scrooc">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Scrooc is a lightweight, privacy focused social media with a plethora of interesting topics to chose from.">
+		<meta property="og:site_name" content="Scrooc">
+
+		<link rel="canonical" href="https://scrooc.com">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body onload="sortBy()">
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<!-- TESTING -->
+			<% if(locals.user) {%>
+				<div class="container browse-topic">
+					<div class="explore-top" style="background-color: white;">
+						<h2 class="post-title">
+							<div>
+								Search through joined topics:
+							</div>
+						</h2>
+						<div>
+							<input type="text" id="topics">
+							<div class="suggest-pop-up s3 scroll">
+								<div class="suggest-box s3">
+								</div>
+							</div>
+						</div>
+						<img class="notification-icon" src="../icons/notification3.svg" tabindex="0">
+					</div>
+
+					<!-- NARED TO NORMAL PA RESPONSIVE -->
+					<div class="s4 notification">
+						<div class="s4">
+							<a href="javascript:void(0);"><li>Loading...</li></a>
+						</div>
+					</div>
+				</div>
+				<script defer src="../../../js/topics.js"></script>
+				<script defer src="../../../js/notifications.js"></script>
+			<% } %>
+
+			<!-- TESTING -->
+
+			<div class="container">
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="load-container"><button class="load" id="load-posts" onclick="getPosts()">Load more</button></div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

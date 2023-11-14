@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Post something!</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="post anonymously on forum, post on scrooc, open speech forum">
+		<meta name="description" content="Scroocs page for making new posts.">
+		
+		<meta property="og:url" content="https://scrooc.com/post">
+		<meta property="og:title" content="Scrooc: Post something!">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Scroocs page for making new posts.">
+		<meta property="og:site_name" content="Scrooc">
+
+		<link rel="canonical" href="https://scrooc.com/post">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body >
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<!--
+
+				https://stackoverflow.com/a/18803568/15414153
+				https://jsbin.com/golavibico/edit?html,css,output
+
+			-->
+
+			<div class="user-input">
+				<form action="/auth/post" class="post_form" enctype="multipart/form-data" method="POST"> 
+					<h3 id="name">Name: 
+						<input id="username" value="<% if (locals.username) { %><%= username %><% } %>" type="text" name="username" required="required">
+					</h3>
+
+					<h3>Enter a title: </h3> 
+					<input id="title" type="text" name="title" value="Lazy scrooc.">
+
+					<h3>Choose a topic: </h3> 
+					<input id="cat" class="suggest s1" type="text" name="cat" required="required" autocomplete="off" >
+					<div class="suggest-pop-up s1">
+						<div class="suggest-box s1"></div>
+					</div>
+
+					<h3>Enter the content: </h3>  
+					<textarea id="con" name="con" required="required"></textarea>
+					<!-- 
+						<input id="con" type="text" name="con" required="required">
+					-->
+
+					<h3>Add a few tags: </h3>
+					<h6>Format them like this: jolly, joyful, joy</h6>
+					<input id="tags" type="text" class="suggest s2" name="tags" required="required" autocomplete="off">
+					<div class="suggest-pop-up s2">
+						<div class="suggest-box s2"></div>
+					</div>
+					
+					<input id="check" name="check" type="checkbox" class="hidden_input">
+					<label class="sensitive post_label"> <!-- SAD CSS moment  for="check" -->
+						<img src="../icons/test/sensitive1.svg" tabindex="0" onclick="document.getElementById('check').click('a')">
+					</label>
+
+					<input id="user_file" name="user_file" type="file" class="hidden_input">
+					<label for="user_file" class="post_label">
+						<img src="../icons/test/image.svg" tabindex="0" onclick="document.getElementById('user_file').click('a')">
+						<img id="image_preview" alt=" ">
+					</label><br>
+
+                    <div class="tra">
+                        <h3>Enter</h3>
+                        <input type="text" id="tra" name="tra" value=" " tabindex="-1">
+                    </div>
+
+					<!-- 
+						<h3>Add an image: </h3>
+						<input type="file" id="user_file" name="user_file">
+
+						<h3>Is it blurred / grotesque... ?</h3>
+						<h6>This doesn't have negative impact only adds a warning.</h6> 
+					-->
+
+					<button class="user-input-btn" type="submit">Post!</button>
+					<a class="topic-create" href="../../../createTopic"><button class="user-input-btn user-input-btn-right">Create a new topic!</button></a>
+				</form> 
+			</div>
+			<div id="canvas"></div>
+		</main>
+
+		<script defer src="../../../js/suggest.js"></script>
+	</body>
+</html> 

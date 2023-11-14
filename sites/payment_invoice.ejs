@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: payment invoice</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="donations, theme unlock, scrooc">
+		<meta name="description" content="Become a supporter of Scrooc!">
+
+		<meta property="og:title" content="Scrooc: make a donation">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Become a supporter of Scrooc!">
+		<meta property="og:site_name" content="Scrooc">
+
+		<meta name="robots" content="noindex, nofollow">
+	</head>
+	<body >
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<div class="crypto-container">
+				<div class="invoice-amount">To finish the payment process send <b class="copy-crypto" onclick="copy('<%= locals.payment_amount %>')"><%= locals.payment_amount %></b> of <b><%= locals.invoice_currency %></b> to the crypto wallet address bellow:</address></div><br>
+				<div class="invoice-address"><b class="copy-crypto" onclick="copy('<%= locals.invoice_address %>')"><%= locals.invoice_address %></b><br><br>
+				<div class="invoice-note">Estimated to be roughly <%= locals.invoice_estimation %> <%= locals.price_currency %>. You can click on the address and amount to copy them.</div>
+				<div class="invoice-note">Copy the URL or payment id if you want to check the status of the payment later.</div>
+				<div class="invoice-note">Be careful when making the payment as sending it to the wrong wallet address, sending the wrong amount, sending the wrong currency or sending anything additionally may result in an unrecoverable and permanent loss of funds.</div>
+				<div class="invoice-note">
+					After successfully sending a payment it will need some time to get processed due to the nature of blockchains.
+					If everything checks it will update the transaction status and enable the additional features.
+					If there was a processing error or some other issue that was not caused by user negligence the payment will be refunded.
+				</div>
+			</div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

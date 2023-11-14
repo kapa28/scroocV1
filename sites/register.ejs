@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Login or register</title>
+
+        <%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="scrooc register, scrooc login, forum registration">
+        <meta name="description" content="Login and registration page for the scrooc social.">
+
+        <meta property="og:title" content="Scrooc: Login or register">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Login and registration page for the scrooc social.">
+		<meta property="og:site_name" content="Scrooc">
+
+        <link rel="canonical" href="https://scrooc.com/register">
+        <meta name="robots" content="index, follow">
+	</head>
+	<body >
+		
+        <%- include ("modules/head.ejs") %>
+
+		<main id="skip1" class="user-input">
+            <div>  
+                <form action="/auth/login" method="POST">
+                    <div>
+                        <h3>Enter your username: </h3>
+                        <input type="text" id="usernameoremail" name="usernameoremail" required>
+                    </div>
+                    <div>
+                        <h3>Enter your password: </h3>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="honey">
+                        <h3>Enter le honey</h3>
+                        <input tabindex="-1" type="text" id="honey" name="honey" value=" ">
+                    </div>
+                    <button class="user-input-btn" type="submit">Login</button>
+                    <a class="topic-create" href="../../../reset"><button class="user-input-btn user-input-btn-right">Can't login?</button></a>
+                </form>
+            </div>
+            
+            <% if (locals.resend) { %>
+                <form class="verify-form" action="/auth/resend" method="POST">
+                    <div>
+                        <h3>Repeat your email: </h3>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button class="user-input-btn verify" type="submit">Resend verification</button>
+                    <div class="policies-accept">Every email is hashed so we can't see it ourselves. You need to enter it again in order for us to resend the verification.</div>
+                </form>
+            <%}%>
+
+            <div>
+                <form action="/auth/register/" method="POST">
+                    <div>
+                        <h3>Enter a username: </h3>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div>
+                        <h3>Enter an email: </h3>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <h3>Enter a password: </h3>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <h3>Confirm the password: </h3>
+                        <input type="password" id="passwordconfirm" name="passwordconfirm" required>
+                    </div>
+                    <div class="honey">
+                        <h3>Enter le honey</h3>
+                        <input tabindex="-1" type="text" id="honey" name="honey" value=" ">
+                    </div>
+                    <button class="user-input-btn" type="submit">Register</button>
+                
+                    <div class="policies-accept">By creating an account or logging back in you accept the newest version of our <a href="/policies#1">privacy policy</a> 
+                        and <a href="/policies#2">terms of service</a> and other policies that may apply. Latest update: <div id="PPupdate"></div></div>
+                </form>
+            </div>
+            
+            <div id="canvas"></div>
+        </main>
+	</body>
+</html> 

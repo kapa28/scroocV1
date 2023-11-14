@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: proposals</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="proposals, suggestions, new ideas, scrooc">
+		<meta name="description" content="A place to suggest changes to Scrooc. Opinions on design, functionality and other things related to how Scrooc operates are welcome!">
+		
+		<meta property="og:title" content="Scrooc: proposals">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="A place to suggest changes to Scrooc. Opinions on design, functionality and other things related to how Scrooc operates are welcome!">
+		<meta property="og:site_name" content="Scrooc">
+
+		<link rel="canonical" href="https://scrooc.com/proposals">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body onload="getProposals();">
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<div class="proposals-container">
+				<div class="post-proposal">
+					<form action="/auth/propose" method="POST">
+						<div class="policies-accept">We have a special area for users to suggest different implementations, options, bug fixes, accessability... </div>
+						<div>
+							<h3>The proposal: </h3>
+							<textarea id="proposal" name="proposal" rows="2" required></textarea>
+						</div><div></div>
+						<button class="user-input-btn" type="submit">Submit your proposal</button>
+					</form>
+				</div>
+			</div>
+			<div class="load-container"><button class="load" id="load-proposals" onclick="getProposals()">Load more</button></div>
+
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

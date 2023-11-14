@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Saved for offline</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="scrooc.com offline saves, user saves">
+		<meta name="description" content="View files you have saved for offline.">
+		
+		<meta property="og:url" content="https://scrooc.com/saves">
+		<meta property="og:title" content="Scrooc: Saved for offline">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="View files you have saved for offline.">
+		<meta property="og:site_name" content="Scrooc">
+
+		<meta name="robots" content="noindex, follow">
+	</head>
+	<body onload="getOfflinePosts();getOfflineNotes()">
+		
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<div class="profile-menu">
+				<div>
+					<div class="notes">
+						<h5>We can't give you the real deal but you can have an offline only notepad.</h5>
+						<div class="notes">
+							<textarea></textarea>
+							<button class="user-input-btn" onclick="saveOfflineNotes()">Save offline notes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="load-container"><button class="load" id="load-posts" onclick="getPosts()">Load more</button></div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: make a donation</title>
+
+		<%- include ("modules/link.ejs") %>
+
+		<meta name="keywords" content="donations, theme unlock, scrooc">
+		<meta name="description" content="Become a supporter of Scrooc!">
+		
+		<meta property="og:url" content="https://scrooc.com/payment">
+		<meta property="og:title" content="Scrooc: make a donation">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Become a supporter of Scrooc!">
+		<meta property="og:site_name" content="Scrooc">
+
+		
+		<link rel="canonical" href="https://scrooc.com/payment">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body >
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+			<div class="crypto-container">
+				<div class="minimal-amount">If you make a payment of around 12 USD or more in your preferred cryptocurrency you will get supporter features on Scrooc.com for the next 3 months. The main selling point being project support and themes unlock.</div><br>
+
+				<h3>Choose your preferred cryptocurrency:</h3>
+				<input type="text" id="crypto" text="ada">
+				<div class="suggest-pop-up s5 scroll">
+					<div class="suggest-box s5 crypto-options">
+					</div>
+				</div
+
+				<input type="text" id="amount">
+				<div class="minimal-amount"></div>
+				<h3>Amount in selected cryptocurrency:</h3>
+				<input type="text" id="amount">
+				<h3>Suggested minimal payment:</h3>
+				<input type="text" id="conversion" disable><br>
+				<div class="minimal-amount">If you go any lower it will be considered a donation and not a full feature unlock:</div>
+				<br><button onclick="startPayment();">Start payment</button>
+			</div>
+
+			<script defer src="../../../js/crypto.js"></script>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

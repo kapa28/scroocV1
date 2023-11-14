@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc</title>
+		<link rel='shortcut icon' type='image/svg' href='icons/favicon.svg'>
+		<link rel="stylesheet" href="../../../css/main_styles.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="manifest" href="../../../manifest.json">
+		<meta charset="UTF-8">
+		<meta name="keywords" content="scrooc forum, scrooc, anonymous forum, lightweight forum, modern forum">
+		<meta name="robots" content="nofollow">
+		<meta name="description" content="Lightweight anonymous-ish forum with a plethora of topics to chose from.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="Scrooc"/>
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="../../../img/og.png" />
+		<meta property="og:description" content="A lightweight anonymous-ish forum with a plethora of topics to chose from." />
+		<meta property="og:site_name" content="Scrooc" />
+	</head>
+	<body onload="sortBy()">
+		<header class="desktop">
+			<div class="side-menu">
+				<a href="#skip1" class="skip1" tabindex="0"><div class="skip-text">Skip to content</div></a>
+
+				<h1 class="logo">
+					<a class="full-width" href="../../../" aria-label="scrooc logo.">
+						scrooc
+					</a>
+				</h1>
+				<div class="menu">
+					<ul>
+						<li><a href="../../../profile">Profile</a></li>
+						<li><a href="../../../auth/logout">Logout</a></li>
+					</ul>
+					<ul>
+						<li><a href="../../../">Home</a></li>
+						<li><a href="../../../post">Post</a></li>
+						<li><a href="../../../about">About</a></li>
+						<li><a href="../../../policies">Policies</a></li> 
+						<li><a href="#" class="theme-btn">Theme</a></li>
+					</ul>
+				</div>
+				<div class="drop">
+					<button onclick="drop();" ondblclick="blur1()" class="drop-btn">Sort by</button>
+					<div id="dropdown-content" class="dropdown-content">
+						<button class="copy" onclick="copy(window.location.href)">Copy URL</button>
+						<button onClick="sortBy(0);">Best received</button>
+						<button onClick="sortBy(1);">Newest</button>
+						<button onClick="sortBy(2);">Oldest</button>
+						<button onClick="sortBy(3);">Most popular</button>
+						<button onClick="sortBy(4);">Spicy</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<header class="mobile">
+			<a href="../../../" aria-label="Scrooc logo.">
+				<div class="mobile-logo">
+						<h1>scrooc</h1>
+				</div>
+			</a>
+			<div class="side-menu">
+				<div class="mobile-menu">
+					<ul>
+						<li><a href="../../../profile">Profile</a></li>
+						<li><a href="../../../auth/logout">Logout</a></li>
+					</ul>
+					<ul>
+						<li><a href="./">Home</a></li>
+
+						<li><a onclick="post()">Post</a></li> <!-- href="../../../post" -->
+						<li><a href="../../../about">About</a></li>
+						<li><a href="../../../policies">Policies</a></li> 
+						<li><a href="#" class="theme-btn">Theme</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mobile-drop">
+				<button onclick="drop()" ondblclick="blur1()" class="drop-btn">Sort by</button>
+				<div id="mobile-dropdown-content" class="dropdown-content">
+					<button class="copy" onclick="copy(window.location.href)">Copy URL</button>
+					<button onClick="sortBy(0);">Best received</button>
+					<button onClick="sortBy(1);">Newest</button>
+					<button onClick="sortBy(2);">Oldest</button>
+					<button onClick="sortBy(3);">Most popular</button>
+					<button onClick="sortBy(4);">Spicy</button>
+				</div>
+			</div>
+		</header>
+
+		<div class="search search-visible">
+                <div class="message1">
+                    <h4 class="message-text1">y̶̡̡̢̨̡̨̢̡̛̱̙̤̮̤̪̱͙̫̫͚̠̻̣͓̠͕͈͈̞̜̖͈̞͇̞̗̣̙̰̼̤̭̠͙̮̮͙͙̳̞̪̺͍̬̟͍̟̗̼͈̰̞͉͕̤̲̫̭̤͚̠̥͌̓͑̈́͛̊̀̈́̉͑̇̀̔͌͂̊͛̆̈́̾̾͂̃͗̆̒͒̃̅̅̓̇͋͂͋̾̏͌̎̓͑͐̐͛̄̿̇͆̓̒̋̾͜͜͝͠͝ͅͅͅͅͅͅơ̶̡̡̡̡̨̡̡̧̡̧̧̗̯͓̻̝̣͖̳̬̪̦͙̝̭̖͖̖͚̬̰̤̪̪͚̙̣͚̮̣͔̪̺̬̫̜̣̣̭̯̠̙̩̬̮̙͓̥͈͚̠̯̳͙͇̞̞̗̪̟̩͓̩̼̗͓̱͉̫͙̜͙̘͓̜͙̱̭̙̼̝̪͉͆́̒̊͋͌͒̊̊̆̍͒͗̊͑̒̃͂̓̅̌̈́̂̂͊͐̐͆͗̔̏́̅͂͊̓̓̈̓̐͒̄̑̀̎̾̈́̑͒͂́̆̔̍̑̋̃͊̌̊̋̇̀̚̚̚͜͝͝ͅų̸̧̢̛̛̛̛̛̛̛̩̼͙̜̩̪͍͚̬̮͍̺̬͕̼͕̱̞͈̺̬͉̊̅͌̈̀̎̔̀̓̅̾́͑̄̇̽̅̈̽̇̑̒͑̿̒̃́̌̈́̈́̍̋͌̈́͗͆̾̾̓͐̍͐͒̄̇̀͛̀̌̿̿̇̿̅͊͋̈́̎̔̌̐̈́̒̌̑͆̓͗̉̍̒͗̌͊̔̃̉̓̓̽͂͛́́̔̈́̈̓̄̌̽̈́̋̔̐͆̇́̏̓͆̾̀͂̈́͋̅̏͒͛͑͌͆̋͌̽͋̐̑̎̋̾́́̆̏̒̀͗̀͂̒͘̕̕͘̕̕̕͝͝͝͝͝͝͝͝͝͠͝ ̶̢̢̨̡̡̢̧̡̡͚̺̻͙̬̝̜̻͕͉͓̭̮̠̹͔͎͚̲͕͓̗̰̦̦̠̻͍̖̺̣̬̙͇͔̟̙̞̫̤͖̜̯͕͇͉̩̫̣͙͙͚̹͈͍̮̖̠̤̼̥̗̦̝͍̪̭̜͔̹̤͎̰̳̜̩͈͇̖̫̹̰̱̼̳̦̰̤̳͗̈̀͜͜͜ͅͅͅͅą̷̧̨̨̢̨̢̧̡̛̛̛̛̛̛̛̜̻̯̦͎̫̞̩̥͕̖͖̥̦̮͉̖̳̙̣̮͉̼̤͔̦̫̻͇͙̺̞͖̼̞͚̗̤͈̻͖̠̘̪̼̹̭̮̟̼̺̫̘̣̤̭̦̟͎̲̪̻͚͖̥̼͙̱̣͇̖̤̭̯̻̗̹̬͍̭̘̭͓̦̬̗͖̮̈͑͋͌͒̀͗͆̇͑̅̈́̀̾̒̋́̅͂͋̀̊͊̿̽̊̇̓̽͆͆̃͂̔̈͐̅̂̏͊̋̈̍͒͆̓̄̅̾̋́̍̏͗̏̂̎͑̃̎̾̈́̃͛̑̉̓͆̍͆̍̏͂̿͗́͂́̋̇̈͋̆̾̌̃̐͛̏̾̄͊̒̐̀̈͊̉̆̆̋̍͋͗̇̾̕̕̚̕̚͘͘͘̚͘̕͘͘͘͜͜͜͜͜͠͠͠͠͝͠͝͝͝ȑ̷̛̛͈͉͔̄͋̔̋̌̑̀̒͛̋̿͊̈̈͌͋͋́́͂̒͗̄̆͊̉́̾̏̈́̎́̍́̋̑̄̅͆̐̽͂̍́̈́͒̎͌̈́̓̓͊̑̎̇̿͋̚͘͘̕̕͠͝͝͝͝e̴̢̨̧̨̛̛̛̱̱̞̱͔̞̼͕̪͓̙͎̮͍̖͖̲̠̠̺̩͇̮̜̞̻͇̥̞̲̮̰͔͈̰͉͔̼̩͚͇̭̙̭̻̜̖̱̻̠̳̝͎̞̰͚͚̮̣̳̝͍͍̓̔̿̊̔̅͆́̈̃͑̓͒͋́̔̎̀͋́͋̇̈̓͒͛͌̄̊̽͒̆͌̿̾̈́̏͒̄͂̈̑̔͒̑̐̇͐͛̉̒̌͆̓̀̒͒͐͋̑̀́̃̈́̃̃͒̆̊̎͘͘̕͜͝͝ͅͅ ̵̢̢̢̧̧̨̡̢̱̠̜͕̦͉̰͓̤̩͈̹̻̺̥͙̘̝̩͖̝͔̺͉̠͉̝̤͙̮̪̜̭̹̣͙̯̝̜̜̺̙̥̰̺̬̩͍̹̮̦̘̬͖̗̪͙̥̫̝̻͍̟͇̩͙͔̠̘̠͕̋̈́̌̀̋̽̅͋͌̏̑̓̀̌̍͒̄̑̈́̐̌̃̉̀̋͗͊͗̑͛̾̋̒͂̔̿̍̀͋͂̄̐̂͆͑̔̊̎̔̇́̓̎̐͌̊͛͌͆̍̇͊͛̀̈́̇̽̆̎̈́̐̄̋̍͐̓̒̂̑́̈́̏̆͗̇͌͑͂̕̚̚̚͘͜͠͝͝͝͠͝͝͝ͅơ̷̢̛̛̛̛̖̞̦̝̪̰̙̮̬̞͕̫̺̭̦̪̼͕̰͙̝̗̜͉̪̟̦̣̖͇̺̰̰̞̅̓̀̍̈̉̓̏̇̅͐͑̂̄͗̑̀́̊͐́̓͆̎̈́̾̈́͗̍͑͋̎̂̈́̋̿͌͋͋̄͒̀͌̇͒̐̽̒̑̓̃͛̾̓̅̈́̋́̾͌͌̍͐̒̇̓̑́̓̀͊̽̾̊͐͋̎͋͊͆̅̏̈́̏̈́̒̋̎͛̊͂͛̈́̆̌̊̉͐̽͆͘͘͘͘̕͘͘̚͘͘͝͝͝͝͝͠ͅͅf̸̢̨̛̛̣̖̭̺͈͖̥̭̖̙̭͂̏̈́̽̿̇͗̽̍̈̊͌̊̑͒̉̎̎̈́̿͑͋̋͒̋̀͐̈̇͑̉͑͗̓̀͒̏͛̐̎͊̔͛́̌̀̔̈́͆͌͌̃̾̀̓̓̇̓́̅̓̔̋̊́̀͑̔̓̅́̐̌̄͌̽̂͑̏̔̇̍̈́̕͘̕̚̕̚͘̕͘̕͝͠͠͝͝͝͝͠ͅf̷̧̨̨̨̢̡̡̧̡̢͕̗͈̬͚̩̮͔̮͕̥͇͉̫͓͈̫̪̰͎̲͓̖̙͇͉̭̥͙̪̗̘͕̫͓͖̤̮͙͎̭̞̥͉̻̦̙̜͖̤͚̝̳̪͓̟͙̪̤̦͈̪̺͉̮͔͍̠͇̗̲̤͖̬͍̬̦̗̩̤̯͉̠̳̭̗͎̹̱̗̬͍̫̼̬͓̯̠̭͇̺̫̝̼͙̜̘̹̮̫͉͍̰͖͇̏̐̓͋̈́̾̒͊̅͛͒̑͘͜͜͜ͅͅͅͅͅĺ̶̨̢̛̟̪̰̪̠̗͓̤̠̐͆͗͑̋̐̓̄̅̑̑̋̔̐͐̈́̍̽̐͆̒̔̾͒̾̾̀̈̉̀̆̾̉́̍̊̓͊͗̿̅͊̽͋̉̓̏͛̂̌̅͋̋́͒̎̈́̔́́̔̔̏̑̔͂̄̏̊̓͋̀̑͌̆̌̾̈́̍̀̄̍̾̊̏̽̾̈̈́̓̊̋̇͊̈̍͒͑̍͋͒̎̾̾̑͒͌͋̈̋̂̕̚̚͘̕͘̕͝͝͝͝͝͝͝͝͠͝͝į̷̢̨̨̢̛̛̖̥̘̤̮̩̙̲̳̞̥̹̙͙̘̟̰̬͉̳̜̱͎̭̱͓̫̥̝͕͂̀̓̽̈̆̈͐̀̏͛͌̽̂͑͐̓̇̏̌͒̃͂̾̓̏̅͆̿͂̀͌͑̏͐̂̉̽̽̏͊̉̒̋́̒̈́̈́̽́̃͘͘͘͝͝n̶̢̨̢̡̨̢̨̨̧̢̡̛̛̰̪͎̯͓̱̮̙͇̙̰̙̤̻̼̥͖͇̟̞͍̹̬̻͇͔̦̙̩̻͈̠̜͖̗̫̠̺̲̼̗̤̝̠̩̫͇̫̤̭̗̘̣̩̱͚̙̖̤͍̜̻͚̥̪͍̫̯̰̝̭͓̤̜͖̻̺̯̣̯̳̻͇̯̙̜̺͚̬͈̝̝̮̣͕̟̺̜͈͚̭̬͓̗͓̩̻̤͚͙͓̱̝̤̮̾̓̾̃̅́́̃̈́́̌̾̈́͋͂̈̽̆̈́̔̅̂͆̐̂̊̐̎̈͛̑͆̔͊͆͒̀̈̉̓̆̀͋͂̆̔͂̑̈͂͛͌͘̕͘̕͜͜͜͜͜͜͜͜͜͝͠͝ͅͅͅe̸̡̧͈̼͎̠͇̤͔͕̞͚̲̥̟͈̠̦̩̹̤͎̖̫̯̺͙̱̪͕͉̦͖̦͓̫͙͉̙͔̩̜̦̱̣̝̪̦̭̹̼̺̤̹̺̗̤̭͈̹̮̩̥̰͍̗̗̠̥̋̀̐̐̋͋͆̎̓̏͐̑̐̏̅̍̏̏̽̈́͌̂̓̋͆͐̇͋͊̄̌̚̕̕̚͜͜͝͠ͅ</h4>
+                </div>
+                <div class="message">
+                    <h4 class="message-text">ơ̷̢̛̛̛̛̖̞̦̝̪̰̙̮̬̞͕̫̺̭̦̪̼͕̰͙̝̗̜͉̪̟̦̣̖͇̺̰̰̞̅̓̀̍̈̉̓̏̇̅͐͑̂̄͗̑̀́̊͐́̓͆̎̈́̾̈́͗̍͑͋̎̂̈́̋̿͌͋͋̄͒̀͌̇͒̐̽̒̑̓̃͛̾̓̅̈́̋́̾͌͌̍͐̒̇̓̑́̓̀͊̽̾̊͐͋̎͋͊͆̅̏̈́̏̈́̒̋̎͛̊͂͛̈́̆̌̊̉͐̽͆͘͘͘͘̕͘͘̚͘͘͝͝͝͝͝͠ͅͅf̸̢̨̛̛̣̖̭̺͈͖̥̭̖̙̭͂̏̈́̽̿̇͗̽̍̈̊͌̊̑͒̉̎̎̈́̿͑͋̋͒̋̀͐̈̇͑̉͑͗̓̀͒̏͛̐̎͊̔͛́̌̀̔̈́͆͌͌̃̾̀̓̓̇̓́̅̓̔̋̊́̀͑̔̓̅́̐̌̄͌̽̂͑̏̔̇̍̈́̕͘̕̚̕̚͘̕͘̕͝͠͠͝͝͝͝͠ͅf̷̧̨̨̨̢̡̡̧̡̢͕̗͈̬͚̩̮͔̮͕̥͇͉̫͓͈̫̪̰͎̲͓̖̙͇͉̭̥͙̪̗̘͕̫͓͖̤̮͙͎̭̞̥͉̻̦̙̜͖̤͚̝̳̪͓̟͙̪̤̦͈̪̺͉̮͔͍̠͇̗̲̤͖̬͍̬̦̗̩̤̯͉̠̳̭̗͎̹̱̗̬͍̫̼̬͓̯̠̭͇̺̫̝̼͙̜̘̹̮̫͉͍̰͖͇̏̐̓͋̈́̾̒͊̅͛͒̑͘͜͜͜ͅͅͅͅͅĺ̶̨̢̛̟̪̰̪̠̗͓̤̠̐͆͗͑̋̐̓̄̅̑̑̋̔̐͐̈́̍̽̐͆̒̔̾͒̾̾̀̈̉̀̆̾̉́̍̊̓͊͗̿̅͊̽͋̉̓̏͛̂̌̅͋̋́͒̎̈́̔́́̔̔̏̑̔͂̄̏̊̓͋̀̑͌̆̌̾̈́̍̀̄̍̾̊̏̽̾̈̈́̓̊̋̇͊̈̍͒͑̍͋͒̎̾̾̑͒͌͋̈̋̂̕̚̚͘̕͘̕͝͝͝͝͝͝͝͝͠͝͝į̷̢̨̨̢̛̛̖̥̘̤̮̩̙̲̳̞̥̹̙͙̘̟̰̬͉̳̜̱͎̭̱͓̫̥̝͕͂̀̓̽̈̆̈͐̀̏͛͌̽̂͑͐̓̇̏̌͒̃͂̾̓̏̅͆̿͂̀͌͑̏͐̂̉̽̽̏͊̉̒̋́̒̈́̈́̽́̃͘͘͘͝͝n̶̢̨̢̡̨̢̨̨̧̢̡̛̛̰̪͎̯͓̱̮̙͇̙̰̙̤̻̼̥͖͇̟̞͍̹̬̻͇͔̦̙̩̻͈̠̜͖̗̫̠̺̲̼̗̤̝̠̩̫͇̫̤̭̗̘̣̩̱͚̙̖̤͍̜̻͚̥̪͍̫̯̰̝̭͓̤̜͖̻̺̯̣̯̳̻͇̯̙̜̺͚̬͈̝̝̮̣͕̟̺̜͈͚̭̬͓̗͓̩̻̤͚͙͓̱̝̤̮̾̓̾̃̅́́̃̈́́̌̾̈́͋͂̈̽̆̈́̔̅̂͆̐̂̊̐̎̈͛̑͆̔͊͆͒̀̈̉̓̆̀͋͂̆̔͂̑̈͂͛͌͘̕͘̕͜͜͜͜͜͜͜͜͜͝͠͝ͅͅͅe̸̡̧͈̼͎̠͇̤͔͕̞͚̲̥̟͈̠̦̩̹̤͎̖̫̯̺͙̱̪͕͉̦͖̦͓̫͙͉̙͔̩̜̦̱̣̝̪̦̭̹̼̺̤̹̺̗̤̭͈̹̮̩̥̰͍̗̗̠̥̋̀̐̐̋͋͆̎̓̏͐̑̐̏̅̍̏̏̽̈́͌̂̓̋͆͐̇͋͊̄̌̚̕̕̚͜͜͝͠ͅ</h4>
+                </div>
+			<form class="form">
+				<input autocomplete="off" class="search-input" type="text" placeholder="Search..." id="search" name="search">
+				<div class="pop-up">
+				<div class="autocomplete-box">
+				</div>
+				<div class="message3">Search...</div>
+				</div>
+				<button class="search-btn" type="button" onclick="SearchP()" role="img" aria-label="search"></button>
+			</form>
+		</div>
+
+		<div class="flash-container">
+		</div>
+		<script defer src="../../../js/ui.js"></script>
+		<main id="skip1">
+			<!-- TESTING -->
+
+			<div class="container">
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container"></div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+				<div class="post placeholder-ph">
+					<div class="meta">
+						<div class="op placeholder"></div>
+						<div class="date placeholder"></div>
+					</div>
+					<h2 class="post-title placeholder"></h2>
+					<h2 class="topic-title placeholder"></h2>
+					<div class="content ph">
+						<p class="post-content placeholder"></p>
+					</div>
+					
+					<div class="attachment-container">
+						<div class="attachment ph"></div>
+					</div>
+					<div class="social">
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+						<a class="social-icons placeholder"><div></div></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="load-container"><button class="load">Load more</button></div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

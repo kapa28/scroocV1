@@ -1,0 +1,11 @@
+.env
+TOdo.txt
+Dockerfile
+Dockerfile.nginx
+docker-compose.yml
+DBdata.sql
+DBstructure.sql
+etc
+data
+docker
+configs/nginx.config

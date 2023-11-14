@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Notifications</title>
+		
+		<%- include ("modules/link.ejs") %>
+
+		<meta name="keywords" content="scroocing forum, scrooc, anonymous forum, lightweight forum, modern forum">
+		<meta name="description" content="Lightweight anonymous-ish forum with a plethora of topics to chose from.">
+		
+		<meta property="og:title" content="Scrooc: Notifications">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="A lightweight anonymous-ish forum with a plethora of topics to chose from.">
+		<meta property="og:site_name" content="Scrooc">
+
+		<meta name="robots" content="noindex, nofollow">
+		<!-- Not for sharing. -->
+	</head>
+	<body >
+
+		<%- include ("modules/head.ejs") %>
+
+		<main id="skip1">
+
+			<div class="all-reply-container" id="mod">
+				<form action="/auth/9d8o7M6f5i4t3o2n1/" id="notificationModForm" method="POST"> 
+                    <h3>Send out a global notification</h3><br>
+					<textarea rows="1" maxlength="60" type="text" name="link" id="link" placeholder="Link goes here..." style="width: 100%;"></textarea><br><br>
+					<textarea rows="1" maxlength="76" type="text" name="message" id="message" placeholder="Message goes here..." style="width: 100%;"></textarea><br>
+                    <div class="tra">
+                        <h3>Enter</h3>
+                        <input type="text" id="tra" name="tra" value=" ">
+                    </div>
+					<button class="user-input-btn" type="submit">Send</button>
+                </form>
+			</div>
+
+			<div class="load-container"><div id="load-posts"></div></div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Statistics</title>
+
+		<%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="scroocing forum, scrooc statistics, scrooc bans, banned scrooc, scrooc posts, scrooc likes">
+		<meta name="description" content="Essential statistics of the Scrooc social platform. See how many posts are made, how many accounts were banned...">
+		
+		<meta property="og:url" content="https://scrooc.com/stats">
+		<meta property="og:title" content="Scrooc: Statistics">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Essential statistics of the Scrooc social platform. See how many posts are made, how many accounts were banned...">
+		<meta property="og:site_name" content="Scrooc">
+
+		<link rel="canonical" href="https://scrooc.com/stats">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body onload="loadTable();">
+
+		<%- include ("modules/head.ejs") %>
+			<!-- message: Current stats -->
+
+		<main id="skip1">
+			<div class="container">
+				<div class="table_container">
+					<table class="main_table">
+						<tbody>
+							
+						</tbody>
+					</table>
+
+					<table class="second_table">
+						<tbody>
+							<tr>
+								<th>Recorded on</th>
+								<th>Total users</th>
+								<th>Total posts</th>
+								<th>Total replies</th>
+								<th>Total views</th>
+								<th>Total likes</th>
+								<!-- <th>Total shares</th> -->
+								<th>Total banned users</th>
+								<th>Total blocked posts</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="load-container"><button class="load" onclick="loadTable();">Load more</button></div>
+			<div id="canvas"></div>
+		</main>
+	</body>
+</html> 

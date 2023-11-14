@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Create a new topic!</title>
+
+		<%- include ("modules/link.ejs") %>
+			
+		<meta name="keywords" content="topic creation, make a new category on scrooc, make topic scrooc">
+		<meta name="description" content="Page for making new topics on scrooc.">
+		
+		<meta property="og:url" content="https://scrooc.com/createTopic">
+		<meta property="og:title" content="Scrooc: Create a new topic!">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Page for making new topics on scrooc.">
+		<meta property="og:site_name" content="Scrooc">
+
+		<link rel="canonical" href="https://scrooc.com/createTopic">
+		<meta name="robots" content="index, follow">
+	</head>
+	<body >
+
+		<%- include ("modules/head.ejs") %>
+		
+		<main id="skip1">
+			<div class="user-input">
+				<form action="/auth/topic" class="post_form" enctype="multipart/form-data" method="POST"> 
+					<h3>Enter a desired topic name: </h3>
+					<input id="name" type="text" name="name" required="required">
+
+					<h3>What is it about ? </h3> 
+					<input id="about" type="text" name="about" required="required">
+
+					<h3>Enter some tags to describe it.</h3> 
+					<h6>Format them like this: jolly, joyful, joy</h6> 
+					<input id="tags" type="text" class="suggest s2" name="tags" required="required" autocomplete="off">
+					<div class="suggest-pop-up s2">
+						<div class="suggest-box s2"></div>
+					</div>
+
+					<!--<h3>Is it *local or global?</h3> 
+					<h6>* - for a specific area, group, city, country, language...<br> It will also get additional recommendations for users in the area.</h6>
+					<input type="radio" name="local" value="global" checked="checked"><div>Global</div><br>
+   					<input type="radio" name="local" value="local"><div>Local</div>-->
+
+					<input id="check" name="check" type="checkbox" class="hidden_input">
+					<label class="sensitive post_label"> <!-- SAD CSS moment  for="check" -->
+						<img src="../icons/test/sensitive1.svg" tabindex="0" onclick="document.getElementById('check').click('a')">
+					</label>
+
+					<input id="user_file" name="user_file" type="file" class="hidden_input">
+					<label for="user_file" class="post_label">
+						<img src="../icons/test/image.svg" tabindex="0" onclick="document.getElementById('user_file').click('a')">
+						<img id="image_preview" alt=" ">
+					</label><br>
+
+					<div class="tra">
+                        <h3>Enter</h3>
+                        <input tabindex="-1" type="text" id="tra" name="tra" value=" " tabindex="-1">
+                    </div>
+
+					<button class="user-input-btn" type="submit">Create!</button>
+				</form> 
+			</div>
+			<div id="canvas"></div>
+		</main>
+
+		<script src="../../../js/suggest.js"></script>
+	</body>
+</html> 

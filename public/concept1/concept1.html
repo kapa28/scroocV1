@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Infiscrooc</title>
+<link rel="stylesheet" href="./styles.css">
+<link rel="shortcut icon" type="image/jpg" href="">
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body >
+	<header>
+		<div class="side-menu">
+			<img src="" alt="">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Explore</a></li>
+				<li><a href="">Post</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Privacy</a></li>
+			</ul>
+			<button class="" href=""></button>
+		</div>
+	</header>
+	
+	<main id="skip1">
+		<!--Random title, infinate scrooc slike 
+		<div class="cat">
+			<h1 class="t1"></h1>
+			<ul>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+			</ul>
+		</div>
+		<div class="cat">
+			<h1 class="t2"></h1>
+			<ul>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+			</ul>
+		</div>
+		<div class="cat">
+			<h1 class="t3"></h1>
+			<ul>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+				<li><img src="" alt=""></li>
+			</ul>
+		</div>
+		
+	Users table - you need to know who is actually writing the posts or 
+	making a comment. This would require a unique integer ID, username, 
+	password, email, and any other info you require.
+    Posts table - I assume you want to keep posts separate from comments. 
+	So here you’d have a unique ID, id of who posted it, title, text, date 
+	any other useful info you require.
+    Comments table - Unique ID, Id of the post you’re commenting on, id of 
+	the person commenting, the text of the comment, the date and any other 
+	useful info you require.
+	
+	https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code 
+	PROBEJ scrooc: https://infinite-scroll.com/demo/full-page/-->
+	
+		<div class="post-container">
+			<div class="posts">
+				<div class="post">
+					<div class="meta">
+						<div class="op"></div>
+						<div class="date"></div>
+						<div class="topic"></div>
+					</div>
+					<div class="content">
+						<h1 class="post-title"></h1>
+						<p class="post-content"></p>
+					</div>
+					<div class="social">
+						<a class="heart" href=""></a>
+						<a class="comment" href=""></a>
+						<a class="report" href=""></a>
+					</div>
+				</div>
+			</div>
+			<div class="posts">
+				<div class="post">
+					<div class="meta">
+						<div class="op"></div>
+						<div class="date"></div>
+						<div class="topic"></div>
+					</div>
+					<div class="content">
+						<h1 class="post-title"></h1>
+						<p class="post-content"></p>
+					</div>
+					<div class="social">
+						<a class="heart" href=""></a>
+						<a class="comment" href=""></a>
+						<a class="report" href=""></a>
+					</div>
+				</div>
+			</div>
+			<div class="posts">
+				<div class="post">
+					<div class="meta">
+						<div class="op"></div>
+						<div class="date"></div>
+						<div class="topic"></div>
+					</div>
+					<div class="content">
+						<h1 class="post-title"></h1>
+						<p class="post-content"></p>
+					</div>
+					<div class="social">
+						<a class="heart" href=""></a>
+						<a class="comment" href=""></a>
+						<a class="report" href=""></a>
+					</div>
+				</div>
+			</div>
+			<a class="load" href="">Load more</a>
+		</div>
+		
+		<canvas id="canvas" width="1920" height="1080" onload="draw();"></canvas> 
+	</main>
+	
+	<script>
+		let el = document.getElementById('canvas');
+		let ctx = el.getContext('2d');
+		
+		/* let brush = new Image;
+		brush.src = '../media/brushes/brush.png';
+		ctx.lineWidth = 25;
+
+		img.onload = function() {
+		ctx.strokeStyle = getPattern(img, 'repeat');
+		}; */
+	
+		function init() {
+		  let canvas = document.getElementById("canvas");
+		  let ctx = canvas.getContext("2d");
+		  draw(ctx);
+		}
+
+		function draw(ctx) {
+		  // layer1/Path
+		  ctx.save();
+		  ctx.beginPath();
+		  ctx.moveTo(244.9, 382.5);
+		  ctx.strokeStyle = "rgb(50, 50, 50)";
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(390.6, 132.8);
+		  ctx.bezierCurveTo(400.0, 134.4, 409.3, 136.1, 418.7, 137.7);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(874.1, 326.2);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(409.2, 645.5);
+		  ctx.bezierCurveTo(406.1, 647.0, 403.0, 648.6, 399.8, 650.2);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(240.1, 297.5);
+		  ctx.bezierCurveTo(247.9, 295.9, 255.7, 294.4, 263.6, 292.8);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(874.1, 298.0);
+		  ctx.bezierCurveTo(875.7, 298.0, 877.2, 298.0, 878.8, 298.0);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(629.9, 645.5);
+		  ctx.bezierCurveTo(647.1, 645.5, 664.4, 645.5, 681.6, 645.5);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(498.4, 354.3);
+		  ctx.bezierCurveTo(506.3, 349.6, 514.1, 344.9, 521.9, 340.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1221.6, 288.6);
+		  ctx.bezierCurveTo(1223.1, 287.0, 1224.7, 285.5, 1226.3, 283.9);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1334.3, 194.7);
+		  ctx.bezierCurveTo(1337.4, 191.6, 1340.5, 188.4, 1343.7, 185.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1446.7, 758.8);
+		  ctx.bezierCurveTo(1455.5, 762.1, 1460.5, 773.2, 1457.0, 781.9);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(639.3, 833.3);
+		  ctx.bezierCurveTo(622.1, 838.0, 604.9, 842.7, 587.7, 847.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(864.7, 828.6);
+		  ctx.bezierCurveTo(863.1, 825.5, 861.6, 822.3, 860.0, 819.2);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1085.8, 583.8);
+		  ctx.bezierCurveTo(1081.1, 580.6, 1076.5, 577.5, 1071.8, 574.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(761.4, 448.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(719.1, 152.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(935.1, 72.6);
+		  ctx.bezierCurveTo(936.7, 72.6, 938.3, 72.6, 939.8, 72.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1418.8, 86.7);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1447.0, 584.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1390.6, 396.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1155.8, 589.1);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1052.5, 420.1);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1367.1, 842.7);
+		  ctx.bezierCurveTo(1370.3, 844.3, 1373.4, 845.8, 1376.5, 847.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(456.2, 917.8);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(5.4, 612.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(61.7, 448.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(47.7, 673.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(118.1, 1007.0);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(273.1, 744.1);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1414.1, 1082.2);
+		  ctx.bezierCurveTo(1407.8, 1082.2, 1401.6, 1082.2, 1395.3, 1082.2);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(944.5, 983.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1076.1, 800.7);
+		  ctx.bezierCurveTo(1080.8, 799.1, 1085.5, 797.5, 1090.2, 796.0);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(33.6, 11.6);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(526.6, 6.9);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1282.6, 16.3);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1864.9, 631.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1879.0, 274.5);
+		  ctx.bezierCurveTo(1875.8, 272.9, 1872.7, 271.4, 1869.6, 269.8);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1540.9, 302.7);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1489.2, 96.1);
+		  ctx.bezierCurveTo(1492.4, 94.5, 1495.5, 92.9, 1498.6, 91.4);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1461.1, 927.2);
+		  ctx.stroke();
+
+		  // layer1/Path
+		  ctx.beginPath();
+		  ctx.moveTo(1108.9, 974.2);
+		  ctx.stroke();
+		  ctx.restore();
+		}
+	</script>
+</body>
+
+</html> 

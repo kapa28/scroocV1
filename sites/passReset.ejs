@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scrooc: Password reset</title>
+
+        <%- include ("modules/link.ejs") %>
+		
+		<meta name="keywords" content="scrooc reset, password reset scrooc, email reset scrooc">
+        <meta name="description" content="Password, email and login reset page for the scrooc social.">
+		
+        <meta property="og:url" content="https://scrooc.com/passReset">
+        <meta property="og:title" content="Scrooc:  Password reset">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../../../img/og.png">
+		<meta property="og:description" content="Password, email and login reset page for the scrooc social.">
+		<meta property="og:site_name" content="Scrooc">
+
+        <meta name="robots" content="noindex, nofollow">
+	</head>
+	<body >
+		
+        <%- include ("modules/head.ejs") %>
+
+		<main id="skip1" class="user-input">
+
+            <form action="/auth/reset/pass/<%= id %>" method="POST">
+                <div>
+                    <div>
+                        <h3>Enter a new password: </h3>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <h3>Confirm the new password: </h3>
+                        <input type="password" id="passwordconfirm" name="passwordconfirm" required>
+                    </div>
+                    <div class="honey">
+                        <h3>Enter le honey</h3>
+                        <input tabindex="-1" type="text" id="honey" name="honey" value=" ">
+                    </div>
+                   
+                    <button class="user-input-btn" type="submit">Submit</button>
+                    <a class="topic-create" href="../../../../register"><button class="user-input-btn user-input-btn-right">Back to login</button></a>
+                </div>
+            </form>
+            <div id="canvas"></div>
+        </main>
+	</body>
+</html> 

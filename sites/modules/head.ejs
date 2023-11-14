@@ -1,0 +1,146 @@
+<header class="desktop">
+    <div class="side-menu">
+
+        <a href="#skip1" class="skip1" tabindex="0"><div class="skip-text">Skip to content</div></a>
+
+        <h1 class="logo">
+            <a class="full-width" href="../../../" aria-label="scrooc logo.">
+                scrooc
+            </a>
+        </h1>
+        <div class="menu">
+            <ul>
+                <% if (locals.user) { %>
+                    <li><a href="../../../profile">Profile</a></li>
+                    <li><a href="../../../auth/logout">Logout</a></li>
+                <%} else{%>
+                    <li><a href="../../../register">Login or Register</a></li>
+                <% }%>
+            </ul>
+            <ul>
+                <li><a href="../../../">Home</a></li>
+                <% if (locals.user) { %>
+                    <li><a href="../../../explore">Explore</a></li>
+                <%}%>
+                <li><a href="../../../post">Post</a></li>
+                <li><a href="../../../about">About</a></li>
+                <li><a href="../../../policies">Policies</a></li> 
+                <li><a href="#" 
+                    <% var mAgo = new Date();mAgo.setMonth(mAgo.getMonth() - 3); if(locals.user) { %>
+                    <% if (+locals.user.last_payment > +mAgo) { %> 
+                        onclick="themeSwitch();"
+                    <%} else {%> 
+                        onclick="supportMessage();"
+                    <%}} else { %>
+                        onclick="supportMessage();"
+                    <% } %>
+                    class="theme-btn">Theme</a></li>
+            </ul>
+        </div>
+        <div class="drop">
+            <button onclick="drop();" ondblclick="blur1()" class="drop-btn">Sort by</button>
+            <div id="dropdown-content" class="dropdown-content">
+                <button class="copy" onclick="copy(window.location.href)">Copy URL</button> <!-- <img src="../../../icons/share.svg" class="share-icon" alt="copy link"> -->
+                <button onClick="sortBy(0);">Best received</button>
+                <button onClick="sortBy(1);">Newest</button>
+                <button onClick="sortBy(2);">Oldest</button>
+                <button onClick="sortBy(3);">Most popular</button>
+                <button onClick="sortBy(4);">Spicy</button>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="mobile">
+    <a href="../../../" aria-label="Scrooc logo.">
+        <div class="mobile-logo">
+                <h1>scrooc</h1>
+        </div>
+    </a>
+    <div class="side-menu">
+        <div class="mobile-menu">
+            <ul>
+                <% if (locals.user) { %>
+                    <li><a href="../../../profile">Profile</a></li>
+                    <li><a href="../../../auth/logout">Logout</a></li>
+                <%} else{%>
+                    <li><a href="register">Login or Register</a></li>
+                <% }%>
+            </ul>
+            <ul>
+                <li><a href="../../../">Home</a></li>
+                <% if (locals.user) { %>
+                    <li><a href="../../../explore">Explore</a></li>
+                <%}%>
+                <li><a onclick="post()" href="javascript:void(0);">Post</a></li> <!-- href="../../../post" -->
+                <li><a href="../../../about">About</a></li>
+                <li><a href="../../../policies">Policies</a></li> 
+                <li><a href="javascript:void(0);"  
+                    <% if(locals.user) { %>
+                    <% if (+locals.user.last_payment > +mAgo) { %> 
+                        onclick="themeSwitch();"
+                    <%} else {%> 
+                        onclick="supportMessage();"
+                    <%}} else { %>
+                        onclick="supportMessage();"
+                    <% } %>
+                    class="theme-btn">Theme</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-drop">
+        <button onclick="drop()" ondblclick="blur1()" class="drop-btn">Sort by</button>
+        <div id="mobile-dropdown-content" class="dropdown-content">
+            <button class="copy" onclick="copy(window.location.href)">Copy URL</button>
+            <button onClick="sortBy(0);">Best received</button>
+            <button onClick="sortBy(1);">Newest</button>
+            <button onClick="sortBy(2);">Oldest</button>
+            <button onClick="sortBy(3);">Most popular</button>
+            <button onClick="sortBy(4);">Spicy</button>
+        </div>
+    </div>
+</header>
+
+<div class="search search-visible">
+    <% if (locals.message1) { %>
+        <div class="message1">
+            <h4 class="message-text1"><%- message1 %></h4>
+        </div>
+    <% } %>
+    <% if (locals.message) { %>
+        <div class="message">
+            <h4 class="message-text"><%= message %></h4>
+        </div>
+    <% } %>
+
+    <form class="form">
+        <input autocomplete="off" class="search-input" type="text" placeholder="Search..." id="search" name="search">
+        <div class="pop-up">
+        <div class="autocomplete-box">
+        </div>
+        <div class="message3">Search...</div>
+        </div>
+        <button class="search-btn" type="button" onclick="SearchP()" role="img" aria-label="search"></button>
+    </form>
+</div>
+
+<div class="flash-container">
+    <% if (locals.logout) { %>
+        <div class="flash-message">
+            <h4 class="flash-message-text" style="animation: message-fade 5s;">You have been logged out.</h4>
+        </div>
+    <% } %>
+    <% if (flash && flash.length > 0) { %>
+        <div class="flash-message">
+            <% if ((flash[0].msg) != null) {%>
+                <% let i = 0; %>
+                <% for(let msg in flash) { %>
+                    <% i++; %>
+                    <h4 class="flash-message-text" style="animation: message-fade <%= 5-i %>s;"><%= flash[msg].msg %></h4>
+                <% } %>
+            <% } else { %>
+                <h4 class="flash-message-text" style="animation: message-fade 5s;"><%= flash %></h4>
+            <% } %>
+        </div>
+    <% } %>
+</div>
+<script defer src="../../../js/ui.js"></script>

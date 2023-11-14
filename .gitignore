@@ -8,4 +8,4 @@ DBstructure.sql
 etc
 data
 docker
-configs/nginx.config
+configs
